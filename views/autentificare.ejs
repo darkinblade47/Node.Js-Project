@@ -1,0 +1,12 @@
+<section class='login' id='login'>
+  <h1 class='title'>Autentificare</h1>
+  <div class='login_form'>
+    <form action="/verificare-autentificare" method="post">
+      <input type="text" id="log_user" name="username" placeholder="Introduceți numele de utilizator" required><br \>
+      <input type="password" id="log_pass" name="password" placeholder="Introduceți parola" required><br \>
+      <% if (errorMsg!=undefined)
+            {%><p><%= errorMsg %></p><%}%>
+        <button type="submit" id="log_btn">Login</button>
+    </form>
+  </div>
+</section>

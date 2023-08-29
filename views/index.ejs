@@ -1,0 +1,57 @@
+<% if(username!=null && username!="admin") {%>
+  <div class="logout">
+    <h3 class="welcome">Logat ca
+      <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form>
+  </div>
+  <% }else if (username=="admin"){%>
+  <div class="logout">
+    <h3 class="welcome">Hai noroc, șefu' <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form> <br>
+    <form action="/admin" method="get">
+      <input type="submit" class="bd_btn" value="Pagina Admin">
+    </form>
+  </div>
+  <%} %>
+
+<% if(username!=null) {%>
+<h2 class="welcome">Bine ai venit, <%= username %>!</h2>
+<% } %>
+
+<br />
+<form action="/creare-bd" method="get">
+  <input type="submit" class="bd_btn" value="Creare BD">
+</form>
+
+<form action="/inserare-bd" method="get">
+  <input type="submit" class="bd_btn" value="Încărcare BD">
+</form>
+
+<% if (products.length > 0) {%>
+<h4 class="welcome">Vă invităm să cumpărați următoarele albume muzicale: </h4>
+<fieldset class="products">
+  <legend>Albume</legend>
+  <% for (let x in products)
+{
+%>
+  <form action="/adaugare_cos" method="post">
+    <input type="hidden" name="id" value="<%= products[x].ID %>">
+
+    <p>
+      <%= products[x].nume %> - <%= products[x].pret %> RON
+      <% if(username!=null) {%>
+      &emsp;<input type="submit" class="bd_btn" value="Adaugă în coș">
+      <% } %>
+    </p>
+
+  </form>
+
+  <% }  }%>
+</fieldset><br>
+<br>

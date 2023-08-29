@@ -1,0 +1,19 @@
+{
+    "intrebari" : [
+        {
+            "intrebare": "În ce an s-a întors Mafia?",
+            "variante": ["1998", "1999", "2022", "2000"],
+            "corect": "3"
+        },
+        {
+            "intrebare": "Ce firmă populară de haine deține Deliric?",
+            "variante": ["Porc", "Guess", "Vagabond Studio", "H&M"],
+            "corect": "0"
+        },
+        {
+            "intrebare": "Când a murit genul Dubstep?",
+            "variante": ["Odată cu apariția COVID-19", "Muzica nu moare", "Acum vreo 10 ani", "Dubstep who?"],
+            "corect": "1"
+        }
+    ]
+}

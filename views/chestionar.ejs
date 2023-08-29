@@ -1,0 +1,46 @@
+<% if(username!=null && username!="admin") {%>
+  <div class="logout">
+    <h3 class="welcome">Logat ca
+      <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form>
+  </div>
+  <% }else if (username=="admin"){%>
+  <div class="logout">
+    <h3 class="welcome">Hai noroc, șefu' <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form> <br>
+    <form action="/admin" method="get">
+      <input type="submit" class="bd_btn" value="Pagina Admin">
+    </form>
+  </div>
+  <%} %>
+  
+<div class="chestionar">
+  <form action="rezultat-chestionar" method="post">
+
+    <% 
+          for(let i=0;i<intrebari.length;i++)
+          {
+              %><fieldset>
+      <legend>Întrebarea numărul <%= i+1 %></legend><%
+              let c=0;
+              %><p><%= intrebari[i].intrebare %></p>
+      <% for(let v of intrebari[i].variante)
+              {
+                  %>
+      <input type="radio" class="radio-btn" name="q<%= i %>" id="q<%= i %>" value="<%= c++ %>" />
+      <label> <%= v %></label><br />
+      <% 
+              } 
+              %>
+    </fieldset> <br /><%     
+          }      
+      %>
+    <input type="submit" class="quiz_btn" value="Finalizează">
+  </form>
+</div>

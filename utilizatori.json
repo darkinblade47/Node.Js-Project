@@ -1,0 +1,22 @@
+{
+    "conturi" :  [
+                    {
+                        "nume":"nume",
+                        "prenume":"prenume",
+                        "utilizator": "test",
+                        "parola": "test"
+                    },
+                    {
+                        "nume":"student",
+                        "prenume":"student",
+                        "utilizator": "student",
+                        "parola": "student"
+                    },
+                    {
+                        "nume":"admin",
+                        "prenume":"admin",
+                        "utilizator": "admin",
+                        "parola": "admin"
+                    }
+                ]
+}

@@ -1,0 +1,27 @@
+<% if(username!=null && username!="admin") {%>
+  <div class="logout">
+    <h3 class="welcome">Logat ca
+      <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form>
+  </div>
+  <% }else if (username=="admin"){%>
+  <div class="logout">
+    <h3 class="welcome">Hai noroc, șefu' <%= username %>
+    </h3>
+    <form action="/logout" method="get">
+      <input type="submit" class="bd_btn" value="Log out">
+    </form> <br>
+    <form action="/admin" method="get">
+      <input type="submit" class="bd_btn" value="Pagina Admin">
+    </form>
+  </div>
+  <%} %>
+
+<section class="quiz_rez">
+  <h1>Rezultate Chestionar</h1>
+  <p>Ați răspuns corect la <%= rezultat %> întrebări din <%= total %>.
+    <% if (rezultat==total) {%>Ai rupt la testul ăsta, bravo!<%} else {%>Se putea și mai bine...good luck next time :)<%}%></p>
+</section>

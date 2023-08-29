@@ -1,0 +1,30 @@
+<% if(username!=null && username!="admin") {%>
+<div class="logout">
+  <h3 class="welcome">Logat ca
+    <%= username %>
+  </h3>
+  <form action="/logout" method="get">
+    <input type="submit" class="bd_btn" value="Log out">
+  </form>
+</div>
+<% }else if (username=="admin"){%>
+<div class="logout">
+  <h3 class="welcome">Hai noroc, șefu' <%= username %>
+  </h3>
+  <form action="/logout" method="get">
+    <input type="submit" class="bd_btn" value="Log out">
+  </form> <br>
+  <form action="/admin" method="get">
+    <input type="submit" class="bd_btn" value="Pagina Admin">
+  </form>
+</div>
+<%} %>
+
+<fieldset class="admin">
+  <legend>Introduceți un nou album:</legend>
+  <form action="/inserare-produs" method="post">
+    <input type="text" name="nume" placeholder="Nume artist și album"><br><br>
+    <input type="number" name="pret" placeholder="Preț"><br><br>
+    <input type="submit" class="bd_btn" value="Adăugați">
+  </form>
+</fieldset>

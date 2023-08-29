@@ -1,0 +1,55 @@
+<% if(username!=null && username!="admin") {%>
+<div class="logout">
+  <h3 class="welcome">Logat ca
+    <%= username %>
+  </h3>
+  <form action="/logout" method="get">
+    <input type="submit" class="bd_btn" value="Log out">
+  </form>
+</div>
+<% }else if (username=="admin"){%>
+<div class="logout">
+  <h3 class="welcome">Hai noroc, șefu' <%= username %>
+  </h3>
+  <form action="/logout" method="get">
+    <input type="submit" class="bd_btn" value="Log out">
+  </form> <br>
+  <form action="/admin" method="get">
+    <input type="submit" class="bd_btn" value="Pagina Admin">
+  </form>
+</div>
+<%} %>
+
+<% if(products.length> 0) {
+    let total = 0 ;%>
+<h4 class="welcome"> Produsele din coș: </h4>
+<% for (let x in products) { %>
+<p class="cos">
+  <% 
+  var quant;
+  for(let j in products)
+  {
+    if (products[x].ID==cart[j].id)
+    {
+        quant=cart[j];
+        break;
+    }
+  }
+  %>
+  <%= products[x].nume %> - <%= products[x].pret %> RON - <%= quant.cantitate %>
+  <% if(cart[x].cantitate==1) { %>
+  album
+  <% } else {%>
+  albume
+  <% } %>
+</p>
+
+<% total +=products[x].pret * cart[x].cantitate; %>
+<% } %>
+<h4 class="welcome">Cost total:
+  <%= total %> lei
+</h4>
+
+<% } else {%>
+<p class="welcome"> Nu aveți produse adăugate în coșul de cumpărături! Cum rezolvăm asta? </p>
+<% } %>
